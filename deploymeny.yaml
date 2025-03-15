@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: jenkins-java
+  template:
+    metadata:
+      labels:
+        app: jenkins-java
+    spec:
+      containers:
+      - name: java-project-ecr
+        image: 340752798567.dkr.ecr.ap-south-1.amazonaws.com/java-project-ecr:latest
+        ports:
+        - containerPort: 8080
