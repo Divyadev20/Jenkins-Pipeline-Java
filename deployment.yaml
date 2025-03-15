@@ -1,19 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins-final
+  creationTimestamp: null
+  labels:
+    app: mydeploy
+  name: mydeploy
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: jenkins-final
+      app: mydeploy
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
-        app: jenkins-final
+        app: mydeploy
     spec:
       containers:
-      - name: jenkins-final
-        image: public.ecr.aws/j4x0w9z8/java-project-ecr:latest
+      - image: 340752798567.dkr.ecr.ap-south-1.amazonaws.com/java-project-ecr:latest
+        name: java-project-ecr
         ports:
         - containerPort: 8080
+        resources: {}
+status: {}
