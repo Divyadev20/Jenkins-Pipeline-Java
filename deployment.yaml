@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: jenkins-final
-        image: 340752798567.dkr.ecr.ap-south-1.amazonaws.com/java-project-ecr:latest
+        image: public.ecr.aws/j4x0w9z8/java-project-ecr:latest
         ports:
         - containerPort: 8080
